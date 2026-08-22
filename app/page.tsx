@@ -1,14 +1,17 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
 
 export default function Home() {
   const letaScene = useRef<HTMLElement>(null);
   const blackScene = useRef<HTMLElement>(null);
+  const [answer, setAnswer] = useState<'yes' | 'no' | null>(null);
 
   useEffect(() => {
+    const savedAnswer = window.localStorage.getItem('wedding-rsvp');
+    if (savedAnswer === 'yes' || savedAnswer === 'no') setAnswer(savedAnswer);
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -37,6 +40,11 @@ export default function Home() {
     };
   }, []);
 
+  const vote = (value: 'yes' | 'no') => {
+    setAnswer(value);
+    window.localStorage.setItem('wedding-rsvp', value);
+  };
+
   return (
     <main>
       <section className="scroll-scene leta-scene" ref={letaScene} style={{ '--p': 0 } as React.CSSProperties}>
@@ -61,6 +69,16 @@ export default function Home() {
             <p>точный адрес добавим сюда</p>
           </div>
         </div>
+      </section>
+
+      <section className="final-rsvp" aria-labelledby="rsvp-title">
+        <h2 id="rsvp-title">Придёте?</h2>
+        <img className="frila" src="/frila.png" alt="Кошка Фрила" />
+        <div className="vote-buttons" aria-label="Ответ на приглашение">
+          <button type="button" className={answer === 'yes' ? 'selected' : ''} aria-pressed={answer === 'yes'} onClick={() => vote('yes')}>Да</button>
+          <button type="button" className={answer === 'no' ? 'selected' : ''} aria-pressed={answer === 'no'} onClick={() => vote('no')}>Нет</button>
+        </div>
+        <p className="vote-status" aria-live="polite">{answer ? 'Ответ сохранён' : 'Выберите вариант'}</p>
       </section>
     </main>
   );
