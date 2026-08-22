@@ -39,18 +39,15 @@ export default function Home() {
 
   return (
     <main>
-      <section className="cover" aria-label="Кирилл и Катя">
-        <img src="/invitation-bg.svg" alt="Кирилл и Катя" />
-        <div className="scroll-hint"><span>листай</span><i>↓</i></div>
-      </section>
-
       <section className="scroll-scene leta-scene" ref={letaScene} style={{ '--p': 0 } as React.CSSProperties}>
-        <div className="sticky-frame">
+        <div className="sticky-frame hero-frame" aria-label="Кирилл и Катя">
+          <img className="cover-bg" src="/invitation-bg.svg" alt="Кирилл и Катя" />
           <div className="date-copy">
             <span>регистрация брака</span>
             <strong>25.09.26</strong>
           </div>
           <img className="leta-face" src="/leta.svg" alt="Кошка Лета" />
+          <div className="scroll-hint"><span>листай</span><i>↓</i></div>
           <p className="tiny-label">наша главная свидетельница</p>
         </div>
       </section>
