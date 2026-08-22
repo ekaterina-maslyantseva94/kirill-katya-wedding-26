@@ -48,7 +48,6 @@ export default function Home() {
           </div>
           <img className="leta-face" src="/leta.svg" alt="Кошка Лета" />
           <div className="scroll-hint"><span>листай</span><i>↓</i></div>
-          <p className="tiny-label">наша главная свидетельница</p>
         </div>
       </section>
 
