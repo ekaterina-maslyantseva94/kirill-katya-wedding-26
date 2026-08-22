@@ -73,12 +73,12 @@ export default function Home() {
 
       <section className="final-rsvp" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Придёте?</h2>
-        <img className="frila" src="/frila.png" alt="Кошка Фрила" />
         <div className="vote-buttons" aria-label="Ответ на приглашение">
           <button type="button" className={answer === 'yes' ? 'selected' : ''} aria-pressed={answer === 'yes'} onClick={() => vote('yes')}>Да</button>
           <button type="button" className={answer === 'no' ? 'selected' : ''} aria-pressed={answer === 'no'} onClick={() => vote('no')}>Нет</button>
         </div>
         <p className="vote-status" aria-live="polite">{answer ? 'Ответ сохранён' : 'Выберите вариант'}</p>
+        <img className="frila" src="/frila.png" alt="Кошка Фрила" />
       </section>
     </main>
   );
