@@ -19,7 +19,7 @@
 @keyframes clink{0%,28%,100%{transform:translateY(8px) scale(.92) rotate(-1.5deg)}46%{transform:translateY(0) scale(1) rotate(0)}52%{transform:translateY(-3px) scale(1.045) rotate(1.2deg)}58%{transform:translateY(0) scale(1) rotate(-.7deg)}66%{transform:translateY(2px) scale(.98) rotate(0)}}
 @media(max-width:720px){.clinking-glasses{width:34vw;max-width:165px;margin-top:18px}}
 @media(prefers-reduced-motion:reduce){.clinking-glasses{animation:none;transform:none}}
-.black-frame{--cat-p:clamp(0,calc(var(--q)*1.8),1)}
+.black-frame{--cat-p:clamp(0,calc(var(--q)*1.5),1)}
 .cat-reveal{clip-path:circle(calc(1% + var(--cat-p)*120%) at 0% 55%)}
 .cat-reveal img{transform:translateX(calc((1 - var(--cat-p))*-48vw)) scale(calc(.18 + var(--cat-p)*.82)) rotate(calc((1 - var(--cat-p))*-8deg))}
 @media(max-width:720px){.cat-reveal{clip-path:circle(calc(1% + var(--cat-p)*145%) at 0% 24%)}.cat-reveal img{transform:translateX(calc((1 - var(--cat-p))*-80vw)) scale(calc(.2 + var(--cat-p)*.8)) rotate(calc((1 - var(--cat-p))*-8deg))}}
