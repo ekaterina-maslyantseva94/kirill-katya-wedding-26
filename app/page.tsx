@@ -111,7 +111,6 @@ export default function Home() {
             ))}
           </div>
           <img className="leta-face" src="/leta.webp" alt="Кошка Лета" />
-          <span className="cat-label leta-label">Лета</span>
           <div className="scroll-hint"><span>листай</span><i>↓</i></div>
         </div>
       </section>
@@ -121,7 +120,6 @@ export default function Home() {
           <img className="rings-intro" src="/rings.svg" alt="Обручальные кольца" />
           <div className="cat-reveal">
             <img src="/black-cat.svg" alt="Чёрный кот" />
-            <span className="cat-label black-cat-label">Кот</span>
           </div>
           <div className="star-field" aria-hidden="true">
             {stars.map(([x, y, size, delay, duration], index) => (
@@ -141,13 +139,14 @@ export default function Home() {
 
       <section className="final-rsvp" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Придёте?</h2>
-        <div className="countdown" aria-label={`${daysLeft} ${dayWord(daysLeft)} до праздника`}>
-          <strong>{daysLeft}</strong>
-        </div>
         <img className="clinking-glasses" src="/glasses.svg" alt="Два чокающихся бокала" />
+        <div className="countdown" aria-label={`${daysLeft} ${dayWord(daysLeft)} до праздника`}>
+          <span className="countdown-prefix">До праздника —</span>
+          <strong>{daysLeft}</strong>
+          <span className="countdown-unit">{dayWord(daysLeft)}</span>
+        </div>
         <div className="frida-wrap">
           <img className="frila" src="/frida.svg" alt="Кошка Фрида" />
-          <span className="cat-label frida-label">Фрида</span>
         </div>
       </section>
     </main>
