@@ -12,7 +12,7 @@
 .confetti i{position:absolute;top:calc(105% + var(--lag));left:var(--x);width:10px;height:20px;border-radius:2px;background:var(--confetti-color);box-shadow:0 5px 14px rgb(30 30 30 / 12%);transform:translate3d(var(--drift),calc((var(--p) - .25)*-120svh),0) rotate(calc((var(--p) - .25)*720deg));will-change:transform}
 .confetti i:nth-child(3n){width:15px;height:15px;border-radius:50%}.confetti i:nth-child(4n){width:8px;height:24px}.confetti i:nth-child(even){transform:translate3d(var(--drift),calc((var(--p) - .25)*-112svh),0) rotate(calc((var(--p) - .25)*-640deg))}
 
-@media(max-width:720px){.date-copy .date-label{margin-bottom:20px;font-size:10vw;transform:scale(calc(2.05 - var(--p)*1.12))}.date-copy .date-number{font-size:20vw;transform:scale(calc(.48 + var(--p)*.76))}.confetti i{width:8px;height:17px}}
+@media(max-width:720px){.date-copy .date-label{margin-bottom:20px;font-size:10vw;line-height:1.08;transform:scale(calc(2.05 - var(--p)*1.12))}.date-copy .date-number{font-size:20vw;transform:scale(calc(.48 + var(--p)*.76))}.confetti i{width:8px;height:17px}}
 @media(prefers-reduced-motion:reduce){.date-copy .date-label,.date-copy .date-number{transform:none}.confetti{display:none}}
 .scroll-hint{color:#fff;text-shadow:0 1px 10px rgb(215 22 98 / 24%)}
 .clinking-glasses{position:relative;z-index:2;display:block;width:clamp(118px,16vw,220px);height:auto;margin:clamp(18px,3vh,30px) auto 8px;transform-origin:center 42%;animation:clink 2.1s cubic-bezier(.45,0,.25,1) infinite;filter:drop-shadow(0 16px 22px rgb(215 22 98 / 14%))}
