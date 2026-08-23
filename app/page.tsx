@@ -90,6 +90,7 @@ export default function Home() {
             <h2>Место<br />такое-то</h2>
             <time>17:40</time>
             <p>точный адрес добавим сюда</p>
+            <img className="place-cake" src="/cake.svg" alt="Свадебный торт" />
           </div>
         </div>
       </section>

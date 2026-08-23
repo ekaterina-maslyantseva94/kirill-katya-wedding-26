@@ -28,3 +28,5 @@
 .date-copy .date-number{color:#fff}
 .mobile-date-break{display:none}
 @media(max-width:720px){.mobile-date-break{display:block}}
+.place-cake{display:block;width:clamp(110px,13vw,190px);height:auto;margin:clamp(16px,2.5vh,26px) 0 0 auto}
+@media(max-width:720px){.place-copy{top:43%}.place-cake{width:28vw;max-width:125px;margin-top:14px}}
