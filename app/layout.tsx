@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'Кирилл & Катя — 25.09.2026',
     description: 'Приглашение на регистрацию брака Кирилла и Кати',
     images: [{
-      url: `${siteUrl}/og.png`,
+      url: `${siteUrl}/og-names.png`,
       width: 1200,
       height: 630,
       alt: 'Кирилл и Катя — приглашение на свадьбу',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Кирилл & Катя — 25.09.2026',
     description: 'Приглашение на регистрацию брака Кирилла и Кати',
-    images: [`${siteUrl}/og.png`],
+    images: [`${siteUrl}/og-names.png`],
   },
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="ru"><body>{children}</body></html>; }
