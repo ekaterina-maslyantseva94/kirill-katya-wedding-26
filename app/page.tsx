@@ -111,6 +111,7 @@ export default function Home() {
             ))}
           </div>
           <img className="leta-face" src="/leta.webp" alt="Кошка Лета" />
+          <span className="cat-label leta-label">Лета</span>
           <div className="scroll-hint"><span>листай</span><i>↓</i></div>
         </div>
       </section>
@@ -118,7 +119,10 @@ export default function Home() {
       <section className="scroll-scene black-scene" ref={blackScene} style={{ '--q': 0 } as React.CSSProperties}>
         <div className="sticky-frame black-frame">
           <img className="rings-intro" src="/rings.svg" alt="Обручальные кольца" />
-          <div className="cat-reveal"><img src="/black-cat.svg" alt="Чёрный кот" /></div>
+          <div className="cat-reveal">
+            <img src="/black-cat.svg" alt="Чёрный кот" />
+            <span className="cat-label black-cat-label">Кот</span>
+          </div>
           <div className="star-field" aria-hidden="true">
             {stars.map(([x, y, size, delay, duration], index) => (
               <i key={index} style={{ '--x': x, '--y': y, '--size': size, '--delay': delay, '--duration': duration } as React.CSSProperties}>
@@ -141,7 +145,10 @@ export default function Home() {
           <strong>{daysLeft}</strong>
         </div>
         <img className="clinking-glasses" src="/glasses.svg" alt="Два чокающихся бокала" />
-        <img className="frila" src="/frida.svg" alt="Кошка Фрида" />
+        <div className="frida-wrap">
+          <img className="frila" src="/frida.svg" alt="Кошка Фрида" />
+          <span className="cat-label frida-label">Фрида</span>
+        </div>
       </section>
     </main>
   );
