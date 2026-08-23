@@ -4,6 +4,23 @@ import { useEffect, useRef } from 'react';
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
 
+const confetti = [
+  ['7%', '-34px', '620deg', '0px', '#d71662'],
+  ['13%', '42px', '-540deg', '96px', '#445dea'],
+  ['20%', '-28px', '720deg', '42px', '#f2a438'],
+  ['27%', '52px', '-680deg', '128px', '#ffffff'],
+  ['34%', '-44px', '580deg', '18px', '#2f3337'],
+  ['41%', '30px', '-760deg', '82px', '#d71662'],
+  ['48%', '-56px', '640deg', '152px', '#f2a438'],
+  ['55%', '38px', '-600deg', '32px', '#445dea'],
+  ['62%', '-30px', '700deg', '114px', '#ffffff'],
+  ['69%', '48px', '-820deg', '8px', '#d71662'],
+  ['76%', '-42px', '560deg', '72px', '#2f3337'],
+  ['83%', '34px', '-720deg', '144px', '#f2a438'],
+  ['90%', '-50px', '660deg', '52px', '#445dea'],
+  ['96%', '26px', '-580deg', '106px', '#ffffff'],
+] as const;
+
 export default function Home() {
   const letaScene = useRef<HTMLElement>(null);
   const blackScene = useRef<HTMLElement>(null);
@@ -43,8 +60,22 @@ export default function Home() {
         <div className="sticky-frame hero-frame" aria-label="Кирилл и Катя">
           <img className="cover-bg" src="/invitation-bg.svg" alt="Кирилл и Катя" />
           <div className="date-copy">
-            <span>регистрация брака</span>
-            <strong>25.09.26</strong>
+            <span className="date-label">регистрация брака</span>
+            <strong className="date-number">25.09.26</strong>
+          </div>
+          <div className="confetti" aria-hidden="true">
+            {confetti.map(([x, drift, spin, lag, color], index) => (
+              <i
+                key={index}
+                style={{
+                  '--x': x,
+                  '--drift': drift,
+                  '--spin': spin,
+                  '--lag': lag,
+                  '--confetti-color': color,
+                } as React.CSSProperties}
+              />
+            ))}
           </div>
           <img className="leta-face" src="/leta.webp" alt="Кошка Лета" />
           <div className="scroll-hint"><span>листай</span><i>↓</i></div>
