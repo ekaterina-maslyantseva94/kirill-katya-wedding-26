@@ -14,3 +14,4 @@
 
 @media(max-width:720px){.date-copy .date-label{margin-bottom:20px;font-size:10vw;transform:scale(calc(2.05 - var(--p)*1.12))}.date-copy .date-number{font-size:20vw;transform:scale(calc(.48 + var(--p)*.76))}.confetti i{width:8px;height:17px}}
 @media(prefers-reduced-motion:reduce){.date-copy .date-label,.date-copy .date-number{transform:none}.confetti{display:none}}
+.scroll-hint{color:#fff;text-shadow:0 1px 10px rgb(215 22 98 / 24%)}
