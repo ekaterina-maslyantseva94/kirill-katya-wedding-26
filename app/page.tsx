@@ -97,7 +97,7 @@ export default function Home() {
       <section className="final-rsvp" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Придёте?</h2>
         <img className="clinking-glasses" src="/glasses.svg" alt="Два чокающихся бокала" />
-        <img className="frila" src="/frila.webp" alt="Кошка Фрила" />
+        <img className="frila" src="/frida.svg" alt="Кошка Фрида" />
       </section>
     </main>
   );
