@@ -90,7 +90,7 @@ export default function Home() {
               />
             ))}
           </div>
-          <img className="leta-face" src="/leta.webp" alt="Кошка Лета" />
+          <img className="leta-face" src="/leta.svg" alt="Кошка Лета" />
           <div className="scroll-hint"><span>листай</span><i>↓</i></div>
         </div>
       </section>
