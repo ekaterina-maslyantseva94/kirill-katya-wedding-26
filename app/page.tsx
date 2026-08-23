@@ -1,20 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
-
-const getDaysToWedding = () => Math.max(0, Math.ceil(
-  (new Date(2026, 8, 25).getTime() - Date.now()) / 86_400_000,
-));
-
-const dayWord = (days: number) => {
-  const lastTwo = days % 100;
-  if (lastTwo >= 11 && lastTwo <= 14) return 'дней';
-  if (days % 10 === 1) return 'день';
-  if (days % 10 >= 2 && days % 10 <= 4) return 'дня';
-  return 'дней';
-};
 
 const confetti = [
   ['7%', '-34px', '620deg', '0px', '#d71662'],
@@ -49,7 +37,6 @@ const stars = [
 export default function Home() {
   const letaScene = useRef<HTMLElement>(null);
   const blackScene = useRef<HTMLElement>(null);
-  const [daysLeft, setDaysLeft] = useState(getDaysToWedding);
 
   useEffect(() => {
     let frame = 0;
@@ -78,13 +65,6 @@ export default function Home() {
       window.removeEventListener('resize', onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, []);
-
-  useEffect(() => {
-    const updateDays = () => setDaysLeft(getDaysToWedding());
-    updateDays();
-    const timer = window.setInterval(updateDays, 60 * 60 * 1000);
-    return () => window.clearInterval(timer);
   }, []);
 
   return (
@@ -140,11 +120,6 @@ export default function Home() {
       <section className="final-rsvp" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Придёте?</h2>
         <img className="clinking-glasses" src="/glasses.svg" alt="Два чокающихся бокала" />
-        <div className="countdown" aria-label={`${daysLeft} ${dayWord(daysLeft)} до праздника`}>
-          <span className="countdown-prefix">До праздника —</span>
-          <strong>{daysLeft}</strong>
-          <span className="countdown-unit">{dayWord(daysLeft)}</span>
-        </div>
         <div className="frida-wrap">
           <img className="frila" src="/frida.svg" alt="Кошка Фрида" />
         </div>
