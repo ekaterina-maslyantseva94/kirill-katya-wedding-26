@@ -119,8 +119,9 @@ export default function Home() {
       <section className="final-rsvp" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Придёте?</h2>
         <div className="countdown" aria-label={`${daysLeft} ${dayWord(daysLeft)} до свадьбы`}>
+          <span className="calendar-title">до свадьбы</span>
           <strong>{daysLeft}</strong>
-          <span>{dayWord(daysLeft)} до свадьбы</span>
+          <span className="calendar-unit">{dayWord(daysLeft)}</span>
         </div>
         <img className="clinking-glasses" src="/glasses.svg" alt="Два чокающихся бокала" />
         <img className="frila" src="/frida.svg" alt="Кошка Фрида" />
