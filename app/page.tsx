@@ -60,7 +60,7 @@ export default function Home() {
         <div className="sticky-frame hero-frame" aria-label="Кирилл и Катя">
           <img className="cover-bg" src="/invitation-bg.svg" alt="Кирилл и Катя" />
           <div className="date-copy">
-            <span className="date-label">регистрация брака</span>
+            <span className="date-label">регистрация<br className="mobile-date-break" /> брака</span>
             <strong className="date-number">25.09.26</strong>
           </div>
           <div className="confetti" aria-hidden="true">

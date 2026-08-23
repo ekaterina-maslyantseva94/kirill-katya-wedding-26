@@ -26,3 +26,5 @@
 @media(prefers-reduced-motion:reduce){.cat-reveal{clip-path:none}.cat-reveal img{transform:none}}
 .date-copy .date-label{color:#d71662}
 .date-copy .date-number{color:#fff}
+.mobile-date-break{display:none}
+@media(max-width:720px){.mobile-date-break{display:block}}
