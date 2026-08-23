@@ -24,3 +24,5 @@
 .cat-reveal img{transform:translateX(calc((1 - var(--cat-p))*-48vw)) scale(calc(.18 + var(--cat-p)*.82)) rotate(calc((1 - var(--cat-p))*-8deg))}
 @media(max-width:720px){.cat-reveal{clip-path:circle(calc(1% + var(--cat-p)*145%) at 0% 24%)}.cat-reveal img{transform:translateX(calc((1 - var(--cat-p))*-80vw)) scale(calc(.2 + var(--cat-p)*.8)) rotate(calc((1 - var(--cat-p))*-8deg))}}
 @media(prefers-reduced-motion:reduce){.cat-reveal{clip-path:none}.cat-reveal img{transform:none}}
+.date-copy .date-label{color:#d71662}
+.date-copy .date-number{color:#fff}
