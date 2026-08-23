@@ -39,3 +39,6 @@
 @media(prefers-reduced-motion:reduce){.star-field img{animation:none}.star-field i:hover img{transform:none}}
 .black-frame .cat-reveal{z-index:2;background:transparent}
 .black-frame .star-field{z-index:1}
+.black-frame .cat-reveal img{left:-6vw;bottom:-2svh;width:min(760px,54vw);height:96svh}
+.black-frame .star-field{clip-path:polygon(0 0,58% 0,58% 100%,0 100%)}
+@media(max-width:720px){.black-frame .cat-reveal img{left:-10vw;top:-4svh;bottom:auto;width:84vw;height:46svh}.black-frame .star-field{clip-path:inset(0 0 56% 0)}}
