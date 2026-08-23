@@ -46,7 +46,7 @@ export default function Home() {
             <span>регистрация брака</span>
             <strong>25.09.26</strong>
           </div>
-          <img className="leta-face" src="/leta.svg" alt="Кошка Лета" />
+          <img className="leta-face" src="/leta.webp" alt="Кошка Лета" />
           <div className="scroll-hint"><span>листай</span><i>↓</i></div>
         </div>
       </section>
