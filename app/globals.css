@@ -37,3 +37,5 @@
 @keyframes star-float{from{transform:translate(-5px,-6px) rotate(-4deg)}to{transform:translate(7px,8px) rotate(5deg)}}
 @media(max-width:720px){.black-frame .cat-reveal img{top:0;height:42svh}.star-field i{width:min(var(--size),14vw)}}
 @media(prefers-reduced-motion:reduce){.star-field img{animation:none}.star-field i:hover img{transform:none}}
+.black-frame .cat-reveal{z-index:2;background:transparent}
+.black-frame .star-field{z-index:1}
