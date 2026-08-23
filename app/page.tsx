@@ -33,6 +33,19 @@ const confetti = [
   ['96%', '26px', '-580deg', '106px', '#ffffff'],
 ] as const;
 
+const stars = [
+  ['7%', '15%', '32px', '-1.1s', '5.8s'],
+  ['22%', '9%', '58px', '-3.2s', '7.2s'],
+  ['43%', '19%', '24px', '-.7s', '6.4s'],
+  ['71%', '12%', '70px', '-4.1s', '8.1s'],
+  ['90%', '29%', '38px', '-2.4s', '6.8s'],
+  ['11%', '64%', '48px', '-3.7s', '7.7s'],
+  ['34%', '78%', '27px', '-1.8s', '6.1s'],
+  ['58%', '68%', '62px', '-4.8s', '8.5s'],
+  ['82%', '82%', '34px', '-2.9s', '7s'],
+  ['94%', '58%', '51px', '-.4s', '7.9s'],
+] as const;
+
 export default function Home() {
   const letaScene = useRef<HTMLElement>(null);
   const blackScene = useRef<HTMLElement>(null);
@@ -106,20 +119,26 @@ export default function Home() {
         <div className="sticky-frame black-frame">
           <img className="rings-intro" src="/rings.svg" alt="Обручальные кольца" />
           <div className="cat-reveal"><img src="/black-cat.svg" alt="Чёрный кот" /></div>
+          <div className="star-field" aria-hidden="true">
+            {stars.map(([x, y, size, delay, duration], index) => (
+              <i key={index} style={{ '--x': x, '--y': y, '--size': size, '--delay': delay, '--duration': duration } as React.CSSProperties}>
+                <img src="/star.svg" alt="" />
+              </i>
+            ))}
+          </div>
           <div className="place-copy">
             <span>ждём вас</span>
             <h2>Место<br />такое-то</h2>
             <time>17:40</time>
             <p>точный адрес добавим сюда</p>
-            <img className="place-cake" src="/cake.svg" alt="Свадебный торт" />
           </div>
         </div>
       </section>
 
       <section className="final-rsvp" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Придёте?</h2>
-        <div className="countdown" aria-label={`${daysLeft} ${dayWord(daysLeft)} до свадьбы`}>
-          <span className="calendar-title">до свадьбы</span>
+        <div className="countdown" aria-label={`${daysLeft} ${dayWord(daysLeft)} до праздника`}>
+          <span className="calendar-title">до праздника</span>
           <strong>{daysLeft}</strong>
           <span className="calendar-unit">{dayWord(daysLeft)}</span>
         </div>
