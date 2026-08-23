@@ -1,0 +1,14 @@
+[build]
+  command = "pnpm run build:netlify"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22.13.0"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  PNPM_FLAGS = "--shamefully-hoist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
