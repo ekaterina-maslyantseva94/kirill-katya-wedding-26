@@ -42,3 +42,30 @@
 .black-frame .star-field{clip-path:polygon(0 0,58% 0,58% 100%,0 100%)}
 @media(max-width:720px){.black-frame .cat-reveal img{left:0;top:0;bottom:auto;width:94vw;height:48svh}.black-frame .place-copy{top:51%}.black-frame .star-field{clip-path:inset(0 0 50% 0)}}
 .frida-wrap{position:relative;width:100vw;margin:auto 0 0}.frida-wrap .frila{margin:0}
+
+/* Mobile Safari: an overflowed ancestor can prevent sticky scenes from repainting. */
+body{overflow-x:hidden}
+main{max-width:100%;overflow:visible}
+
+@media(max-width:720px){
+  .cover-bg{opacity:clamp(0,calc(1 - var(--p)*2.8),1)}
+  .leta-face{
+    z-index:2;
+    left:calc(50% + var(--p)*28%);
+    top:calc(72% - var(--p)*46%);
+    transform:translate3d(-50%,-50%,0) scale(calc(1.32 - var(--p)*1));
+  }
+  .date-copy{
+    z-index:3;
+    opacity:clamp(0,calc((var(--p) - .58)*3.2),1);
+  }
+  .black-frame .cat-reveal{
+    clip-path:none;
+    opacity:clamp(0,calc((var(--q) - .04)*1.5),1);
+    will-change:opacity;
+  }
+  .black-frame .cat-reveal img{
+    transform:translate3d(calc((1 - var(--q))*-72vw),0,0) scale(calc(.2 + var(--q)*.8)) rotate(calc((1 - var(--q))*-8deg));
+    will-change:transform;
+  }
+}
