@@ -41,4 +41,4 @@
 .black-frame .star-field{z-index:1}
 .black-frame .cat-reveal img{left:-9vw;bottom:0;width:min(900px,62vw);height:100svh}
 .black-frame .star-field{clip-path:polygon(0 0,58% 0,58% 100%,0 100%)}
-@media(max-width:720px){.black-frame .cat-reveal img{left:-15vw;top:-8svh;bottom:auto;width:100vw;height:50svh}.black-frame .star-field{clip-path:inset(0 0 56% 0)}}
+@media(max-width:720px){.black-frame .cat-reveal img{left:0;top:0;bottom:auto;width:94vw;height:48svh}.black-frame .place-copy{top:51%}.black-frame .star-field{clip-path:inset(0 0 50% 0)}}
