@@ -1,8 +1,20 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
+
+const getDaysToWedding = () => Math.max(0, Math.ceil(
+  (new Date(2026, 8, 25).getTime() - Date.now()) / 86_400_000,
+));
+
+const dayWord = (days: number) => {
+  const lastTwo = days % 100;
+  if (lastTwo >= 11 && lastTwo <= 14) return 'дней';
+  if (days % 10 === 1) return 'день';
+  if (days % 10 >= 2 && days % 10 <= 4) return 'дня';
+  return 'дней';
+};
 
 const confetti = [
   ['7%', '-34px', '620deg', '0px', '#d71662'],
@@ -24,6 +36,7 @@ const confetti = [
 export default function Home() {
   const letaScene = useRef<HTMLElement>(null);
   const blackScene = useRef<HTMLElement>(null);
+  const [daysLeft, setDaysLeft] = useState(getDaysToWedding);
 
   useEffect(() => {
     let frame = 0;
@@ -52,6 +65,13 @@ export default function Home() {
       window.removeEventListener('resize', onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
+  }, []);
+
+  useEffect(() => {
+    const updateDays = () => setDaysLeft(getDaysToWedding());
+    updateDays();
+    const timer = window.setInterval(updateDays, 60 * 60 * 1000);
+    return () => window.clearInterval(timer);
   }, []);
 
   return (
@@ -84,6 +104,7 @@ export default function Home() {
 
       <section className="scroll-scene black-scene" ref={blackScene} style={{ '--q': 0 } as React.CSSProperties}>
         <div className="sticky-frame black-frame">
+          <img className="rings-intro" src="/rings.svg" alt="Обручальные кольца" />
           <div className="cat-reveal"><img src="/black-cat.svg" alt="Чёрный кот" /></div>
           <div className="place-copy">
             <span>ждём вас</span>
@@ -97,6 +118,10 @@ export default function Home() {
 
       <section className="final-rsvp" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Придёте?</h2>
+        <div className="countdown" aria-label={`${daysLeft} ${dayWord(daysLeft)} до свадьбы`}>
+          <strong>{daysLeft}</strong>
+          <span>{dayWord(daysLeft)} до свадьбы</span>
+        </div>
         <img className="clinking-glasses" src="/glasses.svg" alt="Два чокающихся бокала" />
         <img className="frila" src="/frida.svg" alt="Кошка Фрида" />
       </section>
