@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
+const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${path}`;
 
 const confetti = [
   ['7%', '-34px', '620deg', '0px', '#d71662'],
@@ -71,7 +72,7 @@ export default function Home() {
     <main>
       <section className="scroll-scene leta-scene" ref={letaScene} style={{ '--p': 0 } as React.CSSProperties}>
         <div className="sticky-frame hero-frame" aria-label="Кирилл и Катя">
-          <img className="cover-bg" src="/invitation-bg.svg" alt="Кирилл и Катя" />
+          <img className="cover-bg" src={asset('/invitation-bg.svg')} alt="Кирилл и Катя" />
           <div className="date-copy">
             <span className="date-label">регистрация<br className="mobile-date-break" /> брака</span>
             <strong className="date-number">25.09.26</strong>
@@ -90,21 +91,21 @@ export default function Home() {
               />
             ))}
           </div>
-          <img className="leta-face" src="/leta.svg" alt="Кошка Лета" />
+          <img className="leta-face" src={asset('/leta.svg')} alt="Кошка Лета" />
           <div className="scroll-hint"><span>листай</span><i>↓</i></div>
         </div>
       </section>
 
       <section className="scroll-scene black-scene" ref={blackScene} style={{ '--q': 0 } as React.CSSProperties}>
         <div className="sticky-frame black-frame">
-          <img className="rings-intro" src="/rings.svg" alt="Обручальные кольца" />
+          <img className="rings-intro" src={asset('/rings.svg')} alt="Обручальные кольца" />
           <div className="cat-reveal">
-            <img src="/black-cat.svg" alt="Чёрный кот" />
+            <img src={asset('/black-cat.svg')} alt="Чёрный кот" />
           </div>
           <div className="star-field" aria-hidden="true">
             {stars.map(([x, y, size, delay, duration], index) => (
               <i key={index} style={{ '--x': x, '--y': y, '--size': size, '--delay': delay, '--duration': duration } as React.CSSProperties}>
-                <img src="/star.svg" alt="" />
+                <img src={asset('/star.svg')} alt="" />
               </i>
             ))}
           </div>
@@ -119,9 +120,9 @@ export default function Home() {
 
       <section className="final-rsvp" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Придёте?</h2>
-        <img className="clinking-glasses" src="/glasses.svg" alt="Два чокающихся бокала" />
+        <img className="clinking-glasses" src={asset('/glasses.svg')} alt="Два чокающихся бокала" />
         <div className="frida-wrap">
-          <img className="frila" src="/frida.svg" alt="Кошка Фрида" />
+          <img className="frila" src={asset('/frida.svg')} alt="Кошка Фрида" />
         </div>
       </section>
     </main>
